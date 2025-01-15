@@ -17,7 +17,7 @@ def update_graph():
     ax.set_xlabel("Direcciones IP")
     ax.set_ylabel("Número de Paquetes")
     ax.set_title("Tráfico por Dirección IP")
-    plt.xticks(rotation=45)
+    plt.xticks(rotation=45) #configuracion del teto
     plt.pause(0.01)
 
 def packet_handler(packet):
@@ -26,7 +26,7 @@ def packet_handler(packet):
         src_ip = packet[IP].src
         traffic_data[src_ip] += 1
 
-        # Actualizar gráfico cada vez que se captura un paquete
+        # actualizar gráfico cada vez que se captura un paquete
         update_graph()
 
 # Iniciar captura de paquetes
